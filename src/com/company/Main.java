@@ -6,6 +6,10 @@ public class Main {
         Graph graphInst = new Graph();
         graphInst.loadFile("data.txt");
         graphInst.colorGraphGreedy();
+
+        System.out.println(">>>");
+
+
         graphInst.displayGraph();
 
     }
