@@ -10,7 +10,8 @@ public class Main {
         System.out.println(">>>");
 
 
-        graphInst.displayGraph();
+        // graphInst.displayGraph();
+        graphInst.displayGraphColors();
 
     }
 }
