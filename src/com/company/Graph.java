@@ -41,25 +41,25 @@ public class Graph {
 
         switch(filename) {
             case "myciel4.txt":
-                randomValue = 1.02;
-                break;
-            case "queen6.txt":
-                randomValue = 1.05;
-                break;
-            case "miles250.txt":
-                randomValue = 1.07;
-                break;
-            case "myciel7.txt":
-                randomValue = 1.09;
-                break;
-            case "le450_5a.txt":
-                randomValue = 1.14;
-                break;
-            case "gc500.txt":
                 randomValue = 1.2;
                 break;
+            case "queen6.txt":
+                randomValue = 1.2;
+                break;
+            case "miles250.txt":
+                randomValue = 1.22;
+                break;
+            case "myciel7.txt":
+                randomValue = 1.3;
+                break;
+            case "le450_5a.txt":
+                randomValue = 1.25;
+                break;
+            case "gc500.txt":
+                randomValue = 1.15;
+                break;
             case "gc_1000_300013.txt":
-                randomValue = 1.26;
+                randomValue = 1.12;
                 break;
             default:
                 // code block
