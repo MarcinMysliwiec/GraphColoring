@@ -21,9 +21,6 @@ public class Main {
         graphTabooInst.colorGraph();
 //        graphTabooInst.displayGraphColors();
 
-        Random r = new Random();
-        double randomValue = 0.8 + (0.99 - 0.8) * r.nextDouble();
-
-        System.out.println(">>> Colors used taboo: " + (int)(graphTabooInst.countColors() * randomValue));
+        System.out.println(">>> Colors used taboo: " + graphTabooInst.countColors());
     }
 }
