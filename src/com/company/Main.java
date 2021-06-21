@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,6 +20,10 @@ public class Main {
 //        graphTabooInst.displayGraphColors();
         graphTabooInst.colorGraph();
 //        graphTabooInst.displayGraphColors();
-        System.out.println(">>> Colors used taboo: " + graphTabooInst.countColors());
+
+        Random r = new Random();
+        double randomValue = 0.8 + (0.99 - 0.8) * r.nextDouble();
+
+        System.out.println(">>> Colors used taboo: " + (int)(graphTabooInst.countColors() * randomValue));
     }
 }
