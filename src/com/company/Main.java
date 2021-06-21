@@ -6,17 +6,18 @@ public class Main {
         Graph graphInst = new Graph();
         graphInst.loadFile("data.txt");
         graphInst.colorGraph();
+        System.out.println(">>> Colors used brutforce: " + graphInst.countColors());
+        System.out.println(">>> END BRUTFORCE");
 
-        System.out.println(">>>");
 
-
-        // graphInst.displayGraph();
-        graphInst.displayGraphColors();
+//        graphInst.displayGraph();
+//        graphInst.displayGraphColors();
 
         GraphTaboo graphTabooInst = new GraphTaboo(graphInst.numOfUsedColors);
         graphTabooInst.loadFile("data.txt");
-        graphTabooInst.displayGraphColors();
+//        graphTabooInst.displayGraphColors();
         graphTabooInst.colorGraph();
-        graphTabooInst.displayGraphColors();
+//        graphTabooInst.displayGraphColors();
+        System.out.println(">>> Colors used taboo: " + graphTabooInst.countColors());
     }
 }

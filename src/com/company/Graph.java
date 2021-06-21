@@ -27,6 +27,18 @@ public class Graph {
         this.colorsInUse = new ArrayList<Integer>();
     }
 
+    public Integer countColors() {
+        Integer result = 0;
+        List<Integer> usedColors = new ArrayList<>();
+        for (Integer node : coloredNodes.keySet()) {
+            if( !usedColors.contains( coloredNodes.get(node) )) {
+                result++;
+                usedColors.add(coloredNodes.get(node));
+            }
+        }
+        return result;
+    }
+
     public void initNodes(Integer numOfNodes) {
         for (Integer i = 0; i < numOfNodes; i++) {
             coloredNodes.put(i + 1, -1);
@@ -109,7 +121,6 @@ public class Graph {
 
         System.out.println("Execution time in nanoseconds: " + elapsedTime);
         System.out.println("Execution time in milliseconds: " + elapsedTime / 1000000);
-        System.out.println("lastColorUsed: " + lastColorUsed);
 
         numOfUsedColors = lastColorUsed;
     }

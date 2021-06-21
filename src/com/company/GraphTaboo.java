@@ -13,6 +13,18 @@ public class GraphTaboo {
     List<Integer> colorsInUse;
     Map<Integer, List<Integer>> conflicts;
 
+    public Integer countColors() {
+        Integer result = 0;
+        List<Integer> usedColors = new ArrayList<>();
+        for (Integer node : coloredNodes.keySet()) {
+            if( !usedColors.contains( coloredNodes.get(node) )) {
+                result++;
+                usedColors.add(coloredNodes.get(node));
+            }
+        }
+        return result;
+    }
+
     public GraphTaboo(int colorsInUse) {
         this.coloredNodes = new HashMap<>();
         this.nodes = new HashMap<>();
@@ -67,6 +79,8 @@ public class GraphTaboo {
     }
 
     public void colorGraph() {
+        long startTime = System.nanoTime();
+
         // Pobranie 1 elementu
         // ustawienie pierwszego wolnego koloru
         Iterator<Map.Entry<Integer, Integer>> iterator = coloredNodes.entrySet().iterator();
@@ -81,8 +95,6 @@ public class GraphTaboo {
             }
 
             if (neighbourColors.contains(currentNode.getValue())) {
-                System.out.println(">>> Conflict");
-
                 for(Integer color : colorsInUse) {
                     if(!neighbourColors.contains(color)) {
                         coloredNodes.put(currentNode.getKey(), color);
@@ -91,6 +103,11 @@ public class GraphTaboo {
                 }
             }
         }
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+
+        System.out.println("Execution time in nanoseconds: " + elapsedTime);
+        System.out.println("Execution time in milliseconds: " + elapsedTime / 1000000);
     }
 
     public void loadFile(String filename) {
